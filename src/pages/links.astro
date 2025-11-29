@@ -3,22 +3,21 @@
 ---
 // ---------- 链接数据 ----------
 type LinkItem = {
-  title: string;
-  link: string;
-  desc: string;
-  img: string;
+	title: string;
+	link: string;
+	desc: string;
+	img: string;
 };
 
 const links: LinkItem[] = [
-  {
-    link: "https://pinpe.top",
-    title: "Pinpe的云端",
-    img: "https://pinpe.top/favicon/logo.png",
-    desc: "一个属于自己的云朵",
-  },
+	{
+		link: "https://pinpe.top",
+		title: "Pinpe的云端",
+		img: "https://pinpe.top/favicon/logo.png",
+		desc: "一个属于自己的云朵",
+	},
 ];
 const randomLinks = [...links].sort(() => Math.random() - 0.5);
-
 ---
 
 <!-- 页面渲染部分 -->
