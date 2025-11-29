@@ -5,74 +5,75 @@ import type {
 	ProfileConfig,
 	SiteConfig,
 } from "./types/config";
-import { LinkPreset } from "./types/config";
 
 export const siteConfig: SiteConfig = {
-	title: "Fuwari",
-	subtitle: "Demo Site",
-	lang: "en", // Language code, e.g. 'en', 'zh_CN', 'ja', etc.
+	title: "啸 Online",
+	subtitle: "自己的地球,Online的世界",
+	lang: "en", // 语言代码，例如 'en', 'zh_CN', 'ja' 等
 	themeColor: {
-		hue: 250, // Default hue for the theme color, from 0 to 360. e.g. red: 0, teal: 200, cyan: 250, pink: 345
-		fixed: false, // Hide the theme color picker for visitors
+		hue: 275, // 主题颜色的 hue 值（范围 0–360，例如：红色为 0，青色为 200，粉色为 345）
+		fixed: true, // 是否对访客隐藏主题颜色选择器
 	},
 	banner: {
-		enable: false,
-		src: "assets/images/demo-banner.png", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
-		position: "center", // Equivalent to object-position, only supports 'top', 'center', 'bottom'. 'center' by default
+		enable: true,
+		src: "assets/images/banner.jpg", // 相对于 /src 目录的位置；如果路径以 '/' 开头，则相对于 /public 目录
+		position: "center", // 图标位置，仅支持 'top', 'center', 'bottom'，默认值为 'center'
+
 		credit: {
-			enable: false, // Display the credit text of the banner image
-			text: "", // Credit text to be displayed
-			url: "", // (Optional) URL link to the original artwork or artist's page
+			enable: false, // 是否显示 banner 图片的版权信息
+			text: "", // 要显示的版权文字
+			url: "", // （可选）原始图片或艺术家页面的 URL 链接
 		},
 	},
 	toc: {
-		enable: true, // Display the table of contents on the right side of the post
-		depth: 2, // Maximum heading depth to show in the table, from 1 to 3
+		enable: true, // 是否在文章右侧显示目录
+		depth: 3, // 目录中显示的最大标题层级（范围 1–3）
 	},
 	favicon: [
-		// Leave this array empty to use the default favicon
-		// {
-		//   src: '/favicon/icon.png',    // Path of the favicon, relative to the /public directory
-		//   theme: 'light',              // (Optional) Either 'light' or 'dark', set only if you have different favicons for light and dark mode
-		//   sizes: '32x32',              // (Optional) Size of the favicon, set only if you have favicons of different sizes
-		// }
+		// 如果想使用默认的 favicon，可以保留此数组为空
+		{ src: "/favicon/head.png" },
 	],
 };
 
 export const navBarConfig: NavBarConfig = {
 	links: [
-		LinkPreset.Home,
-		LinkPreset.Archive,
-		LinkPreset.About,
 		{
-			name: "GitHub",
-			url: "https://github.com/saicaca/fuwari", // Internal links should not include the base path, as it is automatically added
-			external: true, // Show an external link icon and will open in a new tab
+			name: "主页",
+			url: "/", // 内部链接不需要包含基础路径，因为基础路径会自动添加
+			external: false, // 是否显示外部链接图标，并在新标签页中打开链接
+		},
+		{
+			name: "归档",
+			url: "/archive/", // 内部链接不需要包含基础路径，因为基础路径会自动添加
+			external: false, // 是否显示外部链接图标，并在新标签页中打开链接
+		},
+		{
+			name: "关于",
+			url: "/about/", // 内部链接不需要包含基础路径，因为基础路径会自动添加
+			external: false, // 是否显示外部链接图标，并在新标签页中打开链接
+		},
+		{
+			name: "友链",
+			url: "/posts/friend-link/", // 内部链接不需要包含基础路径，因为基础路径会自动添加
+			external: false, // 是否显示外部链接图标，并在新标签页中打开链接
 		},
 	],
 };
 
 export const profileConfig: ProfileConfig = {
-	avatar: "assets/images/demo-avatar.png", // Relative to the /src directory. Relative to the /public directory if it starts with '/'
-	name: "Lorem Ipsum",
-	bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+	avatar: "assets/images/head.png", // 相对于 /src 目录的位置；如果路径以 '/' 开头，则相对于 /public 目录
+	name: "skydog221",
+	bio: "自己的地球，Online的世界",
 	links: [
-		{
-			name: "Twitter",
-			icon: "fa6-brands:twitter", // Visit https://icones.js.org/ for icon codes
-			// You will need to install the corresponding icon set if it's not already included
-			// `pnpm add @iconify-json/<icon-set-name>`
-			url: "https://twitter.com",
-		},
-		{
-			name: "Steam",
-			icon: "fa6-brands:steam",
-			url: "https://store.steampowered.com",
-		},
 		{
 			name: "GitHub",
 			icon: "fa6-brands:github",
-			url: "https://github.com/saicaca/fuwari",
+			url: "https://github.com/skydog221",
+		},
+		{
+			name: "订阅",
+			icon: "fa6-solid:rss",
+			url: "/rss.xml",
 		},
 	],
 };
@@ -84,7 +85,5 @@ export const licenseConfig: LicenseConfig = {
 };
 
 export const expressiveCodeConfig: ExpressiveCodeConfig = {
-	// Note: Some styles (such as background color) are being overridden, see the astro.config.mjs file.
-	// Please select a dark theme, as this blog theme currently only supports dark background color
-	theme: "github-dark",
+	theme: "github-dark", // 请选择“dark”主题，因为当前博客主题仅支持深色背景
 };
