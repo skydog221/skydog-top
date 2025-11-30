@@ -3,8 +3,8 @@ title: 这个博客系统特有的Markdown语法
 published: 2025-11-29
 description: '记录一下专有语法'
 image: ''
-tags: ['站点','格式']
-category: '技术与生活'
+tags: ['博客','格式']
+category: '博客'
 draft: false 
 lang: ''
 ---

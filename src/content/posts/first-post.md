@@ -3,8 +3,8 @@ title: 第一个帖子
 published: 2025-11-29
 description: '这个博客的第一个帖子，介绍一下定位和一些基本信息'
 image: ''
-tags: ['技术','站点']
-category: '技术与生活'
+tags: ['技术','博客']
+category: '博客'
 draft: false 
 lang: 'zh'
 ---
