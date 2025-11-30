@@ -3,5 +3,5 @@
 import { siteConfig } from "../config";
 ---
 
-<div id="config-carrier" data-hue={siteConfig.themeColor.hue}>
+<div id="config-carrier" data-hue={Math.floor((Date.now() - new Date("2025-01-01T00:00:00Z").getTime()) / (4 * 60 * 1000)) % 360}>
 </div>
