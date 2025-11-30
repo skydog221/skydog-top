@@ -565,3 +565,85 @@ if (window.swup) {
 	document.addEventListener("swup:enable", setup)
 }
 </script>
+<script is:inline>
+(function() {
+	// Waline 评论系统全局管理
+	if (!window.walineManager) {
+		window.walineManager = {
+			instance: null,
+			observer: null
+		};
+	}
+
+	function cleanupWaline() {
+		if (window.walineManager.instance?.destroy) {
+			window.walineManager.instance.destroy();
+			window.walineManager.instance = null;
+		}
+		if (window.walineManager.observer) {
+			window.walineManager.observer.disconnect();
+			window.walineManager.observer = null;
+		}
+	}
+
+	function setupThemeObserver(instance) {
+		window.walineManager.observer = new MutationObserver(() => {
+			const isDark = document.documentElement.classList.contains('dark');
+			instance?.update?.({ dark: isDark ? 'auto' : false });
+		});
+		window.walineManager.observer.observe(document.documentElement, {
+			attributes: true,
+			attributeFilter: ['class']
+		});
+	}
+
+	function initWaline() {
+		const container = document.querySelector('#waline-container');
+		if (!container) return;
+
+		cleanupWaline();
+
+		if (!document.querySelector('link[href*="waline.css"]')) {
+			const link = document.createElement('link');
+			link.rel = 'stylesheet';
+			link.href = 'https://unpkg.com/@waline/client@v3/dist/waline.css';
+			document.head.appendChild(link);
+		}
+
+		import('https://unpkg.com/@waline/client@v3/dist/waline.js').then((module) => {
+			const isDark = document.documentElement.classList.contains('dark');
+			window.walineManager.instance = module.init({
+				el: '#waline-container',
+				serverURL: 'https://comments.mbod.me/.netlify/functions/comment',
+				lang: 'zh-CN',
+				locale: { placeholder: '欢迎评论...' },
+				dark: isDark ? 'auto' : false,
+				meta: ['nick', 'mail', 'link'],
+				requiredMeta: ['nick'],
+				pageSize: 10,
+				emoji: [
+					'//unpkg.com/@waline/emojis@1.2.0/weibo',
+					'//unpkg.com/@waline/emojis@1.2.0/bilibili',
+					'//unpkg.com/@waline/emojis@1.2.0/tieba'
+				],
+				search: true,
+				copyright: true,
+				reaction: false,
+			});
+			setupThemeObserver(window.walineManager.instance);
+		}).catch((error) => console.error('Failed to load Waline:', error));
+	}
+
+	const setupWaline = () => {
+		initWaline();
+		window.swup.hooks.on('page:view', initWaline);
+		window.swup.hooks.on('visit:start', cleanupWaline);
+	}
+
+	if (window.swup) {
+		setupWaline();
+	} else {
+		document.addEventListener('swup:enable', setupWaline);
+	}
+})();
+</script>

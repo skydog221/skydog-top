@@ -32,7 +32,7 @@ export const siteConfig: SiteConfig = {
 	favicon: [
 		// 如果想使用默认的 favicon，可以保留此数组为空
 		{
-			src: "https://m.ccw.site/user_projects_assets/3302d14052d37840b0d7a5cf0a6ac84c.png",
+			src: "https://m.ccw.site/user_projects_assets/71fda09e6b59355519a8f1d40b40df18.png",
 		},
 	],
 };
@@ -69,7 +69,7 @@ export const navBarConfig: NavBarConfig = {
 
 export const profileConfig: ProfileConfig = {
 	avatar:
-		"https://m.ccw.site/user_projects_assets/3302d14052d37840b0d7a5cf0a6ac84c.png", // 相对于 /src 目录的位置；如果路径以 '/' 开头，则相对于 /public 目录
+		"https://m.ccw.site/user_projects_assets/71fda09e6b59355519a8f1d40b40df18.png", // 相对于 /src 目录的位置；如果路径以 '/' 开头，则相对于 /public 目录
 	name: "skydog221",
 	bio: "自己的地球，Online的世界",
 	links: [
