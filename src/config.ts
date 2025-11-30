@@ -9,7 +9,7 @@ import type {
 export const siteConfig: SiteConfig = {
 	title: "啸 Online",
 	subtitle: "自己的地球,Online的世界",
-	lang: "en", // 语言代码，例如 'en', 'zh_CN', 'ja' 等
+	lang: "zh_CN", // 语言代码，例如 'en', 'zh_CN', 'ja' 等
 	themeColor: {
 		hue: 275, // 主题颜色的 hue 值（范围 0–360，例如：红色为 0，青色为 200，粉色为 345）
 		fixed: true, // 是否对访客隐藏主题颜色选择器
@@ -56,7 +56,7 @@ export const navBarConfig: NavBarConfig = {
 		},
 		{
 			name: "友链",
-			url: "/posts/friend-link/", // 内部链接不需要包含基础路径，因为基础路径会自动添加
+			url: "/friends/", // 内部链接不需要包含基础路径，因为基础路径会自动添加
 			external: false, // 是否显示外部链接图标，并在新标签页中打开链接
 		},
 		{
