@@ -16,7 +16,7 @@ export const siteConfig: SiteConfig = {
 	},
 	banner: {
 		enable: true,
-		src: "assets/images/banner.jpg", // 相对于 /src 目录的位置；如果路径以 '/' 开头，则相对于 /public 目录
+		src: "https://m.ccw.site/user_projects_assets/06dfce9f00ed84136436609945efce5d.jpg", // 相对于 /src 目录的位置；如果路径以 '/' 开头，则相对于 /public 目录
 		position: "center", // 图标位置，仅支持 'top', 'center', 'bottom'，默认值为 'center'
 
 		credit: {
@@ -31,7 +31,9 @@ export const siteConfig: SiteConfig = {
 	},
 	favicon: [
 		// 如果想使用默认的 favicon，可以保留此数组为空
-		{ src: "/favicon/head.png" },
+		{
+			src: "https://m.ccw.site/user_projects_assets/3302d14052d37840b0d7a5cf0a6ac84c.png",
+		},
 	],
 };
 
@@ -61,7 +63,8 @@ export const navBarConfig: NavBarConfig = {
 };
 
 export const profileConfig: ProfileConfig = {
-	avatar: "assets/images/head.png", // 相对于 /src 目录的位置；如果路径以 '/' 开头，则相对于 /public 目录
+	avatar:
+		"https://m.ccw.site/user_projects_assets/3302d14052d37840b0d7a5cf0a6ac84c.png", // 相对于 /src 目录的位置；如果路径以 '/' 开头，则相对于 /public 目录
 	name: "skydog221",
 	bio: "自己的地球，Online的世界",
 	links: [
