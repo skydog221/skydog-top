@@ -16,7 +16,7 @@ export const siteConfig: SiteConfig = {
 	},
 	banner: {
 		enable: true,
-		src: "https://m.ccw.site/user_projects_assets/06dfce9f00ed84136436609945efce5d.jpg", // 相对于 /src 目录的位置；如果路径以 '/' 开头，则相对于 /public 目录
+		src: "https://m.ccw.site/user_projects_assets/530515ce5bf43ef7517f17b5f0ed5949.jpg", // 相对于 /src 目录的位置；如果路径以 '/' 开头，则相对于 /public 目录
 		position: "center", // 图标位置，仅支持 'top', 'center', 'bottom'，默认值为 'center'
 
 		credit: {
@@ -57,6 +57,11 @@ export const navBarConfig: NavBarConfig = {
 		{
 			name: "友链",
 			url: "/posts/friend-link/", // 内部链接不需要包含基础路径，因为基础路径会自动添加
+			external: false, // 是否显示外部链接图标，并在新标签页中打开链接
+		},
+		{
+			name: "讨论",
+			url: "/discussion/", // 内部链接不需要包含基础路径，因为基础路径会自动添加
 			external: false, // 是否显示外部链接图标，并在新标签页中打开链接
 		},
 	],
