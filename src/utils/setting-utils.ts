@@ -24,7 +24,15 @@ export function setHue(hue: number): void {
 	if (!r) {
 		return;
 	}
-	r.style.setProperty("--hue", String(hue));
+	r.style.setProperty(
+		"--hue",
+		String(
+			Math.floor(
+				(Date.now() - new Date("2025-01-01T00:00:00Z").getTime()) /
+					(4 * 60 * 1000),
+			) % 360,
+		),
+	);
 }
 
 export function applyThemeToDocument(theme: LIGHT_DARK_MODE) {
