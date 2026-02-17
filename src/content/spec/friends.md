@@ -37,6 +37,6 @@ draft: false
 
 |网站名称 | 啸 Online|
 |:--|--:|
-|网址 | https://mbod.me/|
+|网址 | https://skydog.cc.cd/|
 |头像 URL | https://m.ccw.site/user_projects_assets/71fda09e6b59355519a8f1d40b40df18.png|
 |介绍 | 自己的地球，Online的世界|
