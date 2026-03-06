@@ -3,8 +3,8 @@ title: QQ Bot 制作记录 & 论折腾
 published: 2026-03-06
 description: ''
 image: ''
-tags: []
-category: ''
+tags: ["技术","生活"]
+category: '生活'
 draft: false 
 lang: ''
 ---
