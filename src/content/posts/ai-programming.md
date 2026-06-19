@@ -1,5 +1,5 @@
 ---
-title: AI 编程代理工具使用心得
+title: 【过时的】AI 编程代理工具使用心得
 published: 2026-01-10
 description: '我使用Kilo code作为主力工具的心得，以及体验CC、Codex的感受'
 image: ''
@@ -44,7 +44,7 @@ hello~
 还体验过CC和codex联合开发，更繁琐。
 
 最后换回kilo。
-
+> 更新：现在Claude code开源了，而且生态更成熟，已用回cc。
 # 附：我使用的kilo全局提示词
 
 部分有AIGC和借鉴augment。
